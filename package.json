@@ -65,7 +65,7 @@
     "flow-typed": "^2.5.1",
     "html-webpack-plugin": "^3.2.0",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "23.6.0",
+    "jest": "^23.6.0",
     "nodemon": "^1.18.9",
     "prettier": "^1.15.3",
     "react-cosmos": "^4.7.0-19",
