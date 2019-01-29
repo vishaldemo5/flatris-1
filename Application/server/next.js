@@ -4,6 +4,8 @@ import next from 'next';
 import { join } from 'path';
 import { startServer } from './http';
 
+var port = process.env.PORT || 3000;
+
 export async function startNextApp(
   app: express$Application,
   server: net$Server
@@ -29,5 +31,5 @@ export async function startNextApp(
   });
 
   //startServer(server, 3000);
-  startServer(server, 80);
+  startServer(server, port);
 }

@@ -10,6 +10,8 @@ import type { User, GameId, Game, Stats, State } from 'shared/types/state';
 import type { Action } from 'shared/types/actions';
 import type { BackfillRequest, BackfillResponse } from 'shared/types/api';
 
+var port = process.env.PORT || 3000;
+
 // NOTE: This method is strictly called on the server side
 export async function addCurUserToState(
   req: http$IncomingMessage,
@@ -73,7 +75,7 @@ export function Unauthorized() {
 function getProdBaseUrl() {
   // Relative paths allow us to serve the prod app from any proxy address (eg.
   // via ngrok), but server-side requests need to contain the host address
-  return typeof window === 'undefined' ? 'http://localhost:3000' : '';
+  return typeof window === 'undefined' ? "http://localhost:" + port : '';
 }
 
 function fetchJson(urlPath: string, options?: Object): Promise<any> {
