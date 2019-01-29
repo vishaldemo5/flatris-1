@@ -31,5 +31,5 @@ export async function startNextApp(
   });
 
   //startServer(server, 3000);
-  startServer(server, port);
+  startServer(server, parseInt(port));
 }
