@@ -30,7 +30,7 @@ spec:
       spec:
         containers:
           - name: flatris-app
-            image: vishal.azurecr.io/pingvishal/flatris:74
+            image: flatris.azurecr.io/flatris-app
             ports:
               - containerPort: 3000
         imagePullSecrets:
