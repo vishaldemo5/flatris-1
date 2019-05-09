@@ -10,7 +10,9 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
-  imageName: 'flatris:$(build.buildId)'
+  - name: imageName
+    value: 'flatris:$(build.buildId)'
+  - name: customSuffix
 
 steps:
 - script: docker build -f Dockerfile -t $(imageName)$(customSuffix) .
