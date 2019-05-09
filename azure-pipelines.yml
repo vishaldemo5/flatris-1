@@ -12,5 +12,8 @@ pool:
 variables:
   imageName: 'flatris:$(build.buildId)'
 
-steps:
-- template: build/jobs/template.yml
+stages:
+- stage: Test
+  displayName: Test
+  jobs:
+  - template: build/jobs/template.yml
