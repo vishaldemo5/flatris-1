@@ -1,3 +1,6 @@
-jobs:
-  script: docker build -f Dockerfile -t $(imageName)$(customSuffix) .
-  displayName: 'docker build'
+job:
+  pool:
+    vmImage: 'Ubuntu-16.04'
+  steps:
+  - script: docker build -f Dockerfile -t $(imageName)$(customSuffix) .
+    displayName: 'docker build'
