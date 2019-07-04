@@ -17,7 +17,6 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'c793954a-68f3-4863-aa48-624ed247597d'
   imageRepository: 'flatris'
   containerRegistry: 'vishal.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Application/Dockerfile'
@@ -41,6 +40,6 @@ stages:
         command: buildAndPush
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
-        containerRegistry: $(dockerRegistryServiceConnection)
+        containerRegistry: $(containerRegistry)
         tags: |
           $(tag)
