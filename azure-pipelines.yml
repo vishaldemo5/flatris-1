@@ -18,7 +18,7 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   imageRepository: 'flatris'
-  containerRegistry: 'vishal.azurecr.io'
+  containerRegistry: 'docker-vj'
   dockerfilePath: '$(Build.SourcesDirectory)/Application/Dockerfile'
   tag: '$(Build.BuildId)'
   
