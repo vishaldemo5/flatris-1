@@ -34,6 +34,11 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
+    - task: AzurePolicyCheckGate@0
+      inputs:
+        azureSubscription: 'RMPM (afc11291-9826-46be-b852-70349146ddf8)'
+        ResourceGroupName: 'vishal-rg'
+        Resources: '/subscriptions/afc11291-9826-46be-b852-70349146ddf8/resourceGroups/vishal-rg/providers/Microsoft.ContainerService/managedClusters/vishal-aks-policy'
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
@@ -43,3 +48,4 @@ stages:
         containerRegistry: $(containerRegistry)
         tags: |
           $(tag)
+    
